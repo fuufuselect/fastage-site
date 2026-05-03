@@ -1,0 +1,643 @@
+/* ==============
+  Base
+============== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #333;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  padding: 72px 0;
+  margin-bottom: 32px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+
+/* ==============
+  Layout
+============== */
+
+/* header */
+.site-header {
+  background-color: white;
+  display: flex;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  transition: 0.3s;
+}
+
+.site-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+.logo span {
+  color: blue;
+}
+
+.global-nav ul {
+  display: flex;
+  gap: 24px;
+}
+
+.global-nav a {
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+}
+
+.global-nav a:hover {
+  opacity: 0.7;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* 黒オーバーレイ（文字見やすくする） */
+.hero::before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+/* タイトル */
+.hero-title {
+  font-size: 4rem;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* コンセプト */
+.hero-concept {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-concept span {
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* 順番に出す */
+.hero-concept span:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.hero-concept span:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.hero-concept span:nth-child(3) {
+  animation-delay: 1.0s;
+}
+
+/* 下線アニメっぽく見せる */
+.hero-concept span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0;
+  height: 2px;
+  background: #fff;
+
+  animation: lineGrow 0.6s ease forwards;
+}
+
+.hero-concept span:nth-child(1)::after {
+  animation-delay: 0.6s;
+}
+
+.hero-concept span:nth-child(2)::after {
+  animation-delay: 0.9s;
+}
+
+.hero-concept span:nth-child(3)::after {
+  animation-delay: 1.2s;
+}
+
+/* サブテキスト */
+.hero-sub {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
+/* ボタン */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineGrow {
+  to {
+    width: 100%;
+  }
+}
+
+/* 共通 */
+.btn {
+  padding: 12px 28px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.fade-up.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SERVICE */
+.btn-primary {
+  background: #fff;
+  color: #000;
+}
+
+/* WORKS */
+.btn-secondary {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* ★ SHOP（メイン導線） */
+.btn-shop {
+  background: #c46a2d;
+  /* テラコッタ */
+  color: #fff;
+  border: none;
+}
+
+/* hover */
+.btn:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+/* SHOPだけ少し強め */
+.btn-shop:hover {
+  background: #a95520;
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 220px;
+    text-align: center;
+    transition: 0.3s ease;
+  }
+}
+
+.primary {
+  background-color: #1f7cff;
+  padding: 12px 20px;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* service */
+.section {
+  background-color: #ffffff;
+}
+
+
+.section-title {
+  text-align: center;
+  letter-spacing: 0.5rem;
+}
+
+.section-lead {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.service-card {
+  flex: 1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  border-radius: 8px
+}
+
+/* WORKS */
+.works-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.works-card {
+  flex: 1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  border-radius: 8px
+}
+
+/* OUR SHOP */
+.shop-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+
+}
+
+.shop-image img {
+  max-width: 80%;
+  display: block;
+}
+
+.btn-base {
+  display: inline-block;
+  background-color: #51b2b8;
+  padding: 20px 48px;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 24px;
+  max-width: 100%;
+  transition: 0.3s ease;
+}
+
+.btn-rakuten {
+  display: inline-block;
+  background-color: #bf0000;
+  padding: 20px 37px;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 24px;
+
+  transition: 0.3s ease;
+}
+
+.btn-rakuten:hover {
+  transform: translateY(-2px);
+}
+
+.btn-base:hover {
+  transform: translateY(-2px);
+}
+
+
+
+
+.shop-buttons {
+  .shop-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+.shop-buttons a {
+  white-space: nowrap;
+}
+
+.shop-buttons a:hover {
+  opacity: 0.7;
+}
+
+/* COMPANY */
+.company-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.company-table div {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+}
+
+.company-table dt {
+  font-weight: bold;
+  width: 120px;
+}
+
+.company-table dd {
+  margin: 0;
+  flex: 1;
+}
+
+/* contact */
+#contact {
+  margin: 40px 0;
+}
+
+.contact-form {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.form-row {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1.4rem;
+}
+
+.form-row-center {
+  margin-top: 24px;
+}
+
+.primary {
+  width: 160px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+}
+
+/* footer */
+.footer {
+  padding: 10px 10px;
+  background: #111;
+  color: #aaa;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.footer-credit {
+  font-size: 1rem;
+  color: #777;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ハンバーガーボタン（PCでは非表示） */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+  background: #333;
+}
+
+/* ==============
+  Responsive
+============== */
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 220px;
+    text-align: center;
+  }
+
+  .section-lead {
+    font-size: 1.3rem;
+  }
+
+  .service-grid {
+    flex-direction: column;
+  }
+
+  .works-grid {
+    flex-direction: column;
+  }
+
+  .shop-inner {
+    flex-direction: column;
+  }
+
+  .shop-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-base,
+  .btn-rakuten {
+    width: 90%;
+    text-align: center;
+  }
+
+  .shop-image img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .company-wrapper {
+    flex-direction: column;
+  }
+
+  .global-nav ul {
+    gap: 16px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  /* スマホ時はナビを「メニュー」として表示する */
+  .global-nav {
+    position: absolute;
+    top: 60px;
+    /* headerの高さに合わせる（あなたは60px） */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e9;
+    display: none;
+    /* まず閉じる */
+    padding: 12px 0;
+  }
+
+  /* スマホ時は縦並び */
+  .global-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .global-nav a {
+    display: block;
+    padding: 12px 16px;
+  }
+
+  /* JSで付けるクラス：開いた状態 */
+  .global-nav.is-open {
+    display: block;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+
+}

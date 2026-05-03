@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>FASTAGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="preload" as="image" href="images/denim1.jpg">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">FASTAGE</a>
+
+      <!-- ハンバーガーボタン（スマホだけ表示） -->
+      <button class="nav-toggle" aria-controls="global-nav" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="sr-only">メニュー</span>
+      </button>
+
+      <!-- ナビ（PCは横並び、スマホは開閉） -->
+      <nav id="global-nav" class="global-nav" aria-hidden="true">
+        <ul>
+          <li><a href="#service">SERVICE</a></li>
+          <li><a href="#works">WORKS</a></li>
+          <li><a href="#shop">SHOP</a></li>
+          <li><a href="#company">COMPANY</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="images/denim1.jpg" class="hero-bg" loading="eager">
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        FASTAGE
+      </h1>
+
+      <div class="hero-concept">
+        <span>FAST</span>
+        <span>STEADY</span>
+        <span>CHANGE</span>
+      </div>
+
+      <p class="hero-sub">
+        Accelerating your next stage with speed, dedication, and transformation.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#service" class="btn btn-primary">SERVICE</a>
+        <a href="#works" class="btn btn-secondary">WORKS</a>
+        <a href="https://fuufu.theshop.jp/" class="btn btn-shop" target="_blank" rel="noopener noreferrer">SHOP</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="service" class="section">
+    <div class="container">
+      <h2 class="section-title">SERVICE</h2>
+      <p class="section-lead">弊社事業のご紹介</p>
+
+      <div class="service-grid fade-up">
+        <article class="service-card">
+          <img src="images/service1.jpg" alt="">
+          <h3>国内通販事業</h3>
+          <p>海外から1点ずつ厳選セレクトした古着やシルバーアクセサリーをBASE、楽天市場を中心にオンラインショップで販売を行なっております。</p>
+        </article>
+
+        <article class="service-card">
+          <img src="images/service2.jpg" alt="">
+          <h3>海外通販事業</h3>
+          <p>ビンテージアイテムやラグジュアリーブランドアイテムを中心に海外通販サイトで販売を行なっております。</p>
+        </article>
+
+        <article class="service-card">
+          <img src="images/service3.jpg" alt="">
+          <h3>卸売事業</h3>
+          <p>インターネットを通じて国内外の小売店へ古着の卸売を行なっております。</p>
+        </article>
+      </div>
+  </section>
+
+
+  <section id="works" class="section">
+    <div class="container">
+      <h2 class="section-title">WORKS</h2>
+      <p class="section-lead">私たちの強み</p>
+
+      <div class="works-grid fade-up">
+        <article class="works-card">
+          <img src="images/works1.jpg" alt="">
+
+          <h3>海外仕入れ</h3>
+          <p>海外現地での仕入れを行い、独自のネットワークを活かして一点一点厳選仕入れを行なっております。
+            現地での選定にこだわることで、国内では見つかりにくいアイテムやコンディションの良い古着を安定して確保しています。</p>
+
+        </article>
+
+        <article class="works-card">
+          <img src="images/works2.jpg" alt="">
+
+          <h3>品質へのこだわり</h3>
+          <p>
+            すべての商品はコンディションを確認した上で取り扱い、安心して着用いただける状態でご提供しています。丁寧な洗濯、検品、リペアを実施する事で古着特有の風合いを活かしながらも、安心して長くご愛用いただける状態に仕上げています。
+          </p>
+
+        </article>
+
+        <article class="works-card">
+          <img src="images/works3.jpg" alt="">
+
+          <h3>セレクト基準</h3>
+          <p>トレンドとヴィンテージのバランスを重視したセレクトを行っています。
+            サイズ感・シルエット・デザインを総合的に判断し、日常に取り入れやすいラインナップを意識しています。</p>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" class="section">
+    <h2 class="section-title">OUR SHOP</h2>
+    <p class="section-lead">fuufuについて</p>
+    <div class="container shop-inner fade-up">
+      <div class="shop-image">
+        <img src="images/fuufu1.png" alt="fuufu-shop">
+      </div>
+
+      <div class="shop-text">
+        <p>
+          海外から1点ずつ厳選セレクトした古着やシルバーアクセサリーをBASE、楽天市場を中心にオンラインショップで販売しています。<br>商品の魅力が伝わる写真に拘り、オンラインでも安心して購入できる環境を整えています。
+        </p>
+        <div class="shop-buttons">
+          <a href="https://fuufu.theshop.jp/" class="btn-base" target="_blank" rel="noopener noreferrer">
+            BASE店はこちら
+          </a>
+
+          <a href="https://www.rakuten.co.jp/fuufu/" class="btn-rakuten" target="_blank" rel="noopener noreferrer">
+            楽天市場店はこちら
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section id="company" class="section">
+    <div class="container">
+      <h2 class="section-title">COMPANY</h2>
+      <p class="section-lead">会社概要</p>
+      <div class="company-wrapper">
+        <dl class="company-table">
+          <div>
+            <dt>会社名</dt>
+            <dd>合同会社ファステージ</dd>
+          </div>
+          <div>
+            <dt>所在地</dt>
+            <dd>東京都足立区栗原４丁目１８番２３―１９０４号</dd>
+          </div>
+          <div>
+            <dt>事業内容</dt>
+            <dd>EC販売事業</dd>
+          </div>
+          <div>
+            <dt>代表</dt>
+            <dd>平塚 雄大</dd>
+          </div>
+          <div>
+            <dt>設立</dt>
+            <dd>2024年4月</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">CONTACT</h2>
+
+      <form name="contact" method="POST" data-netlify="true" class="contact-form">
+        <input type="hidden" name="form-name" value="contact">
+
+        <div class="form-row">
+          <label for="name">お名前</label>
+          <input id="name" type="text" name="name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">メールアドレス</label>
+          <input id="email" type="email" name="email" required>
+        </div>
+
+        <div class="form-row">
+          <label for="message">お問い合わせはこちら</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <div class="form-row form-row-center">
+          <button type="submit" class="btn primary">送信する</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-logo">FASTAGE Inc.</p>
+      <p class="footer-credit">
+        © 2026 FASTAGE · Image by Freepik
+      </p>
+    </div>
+  </footer>
+</body>
+<script defer src="js/main.js"></script>
+
+</html>
