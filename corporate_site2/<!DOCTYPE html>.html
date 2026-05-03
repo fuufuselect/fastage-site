@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>合同会社ファステージ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<script>
+  const btn = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("#global-nav");
+
+  btn.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", String(isOpen));
+    nav.setAttribute("aria-hidden", String(!isOpen));
+  });
+
+  // メニューのリンクを押したら閉じる（スマホ便利）
+  nav.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+      nav.setAttribute("aria-hidden", "true");
+    });
+  });
+</script>
+
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="logo">FUUFU<span>CREATIVE</span></a>
+
+    <!-- ハンバーガーボタン（スマホだけ表示） -->
+    <button class="nav-toggle" aria-controls="global-nav" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="sr-only">メニュー</span>
+    </button>
+
+    <!-- ナビ（PCは横並び、スマホは開閉） -->
+    <nav id="global-nav" class="global-nav" aria-hidden="true">
+      <ul>
+        <li><a href="#service">SERVICE</a></li>
+        <li><a href="#works">WORKS</a></li>
+        <li><a href="#company">COMPANY</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-label">Small Business Web Partner</p>
+          <h1>小さなお店のための<br>シンプルなWeb制作</h1>
+          <p class="hero-desc">古着ECやカフェ、サロンなどスモールビジネスに特化した Webサイト制作・運用サポートを行う制作会社です。</p>
+          <a href="#contact" class="btn primary">お問い合わせはこちら</a>
+        </div>
+
+        <div class="hero-image">
+          <img src="images/hero.svg" alt="パソコンで作業するイラスト">
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="section">
+      <div class="container">
+        <h2 class="section-title">SERVICE</h2>
+        <p class="section-lead">はじめてのWebサイトでも安心して任せられる、3つのサービス。</p>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>コーポレートサイト制作</h3>
+            <p>会社やお店の「顔」となるサイトを制作します。 スマホ対応・シンプルで見やすいレイアウトを基本としています。</p>
+          </article>
+
+          <article class="service-card">
+            <h3>ECサイト構築サポート</h3>
+            <p>古着EC運営の経験を活かし、ショップ目線での構成・導線を提案します。</p>
+          </article>
+
+          <article class="service-card">
+            <h3>更新・運用サポート</h3>
+            <p>日々の更新やバナー差し替えなど、運用フェーズの ちょっとした困りごともサポートします。</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="section section-gray">
+      <div class="container">
+        <h2 class="section-title">WORKS</h2>
+        <p class="section-lead">学習用の架空サイト3つを想定して、カードレイアウトで一覧表示します。</p>
+
+        <div class="works-grid">
+          <article class="works-card">
+            <img src="images/work1.svg" alt="古着ECサイトのサムネイル">
+            <div class="works-body">
+              <h3>Vintage Clothing EC</h3>
+              <p>古着ECサイトのトップページデザイン。</p>
+            </div>
+          </article>
+
+          <article class="works-card">
+            <img src="images/work2.svg" alt="カフェサイトのサムネイル">
+            <div class="works-body">
+              <h3>Neighborhood Cafe</h3>
+              <p>近所のカフェ紹介サイトのトップページ。</p>
+            </div>
+          </article>
+
+          <article class="works-card">
+            <img src="images/work3.svg" alt="制作会社サイトのサムネイル">
+            <div class="works-body">
+              <h3>Studio Portfolio</h3>
+              <p>制作会社のポートフォリオサイト。</p>
+          </article>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="company" class="section">
+      <div class="container">
+        <h2 class="section-title">COMPANY</h2>
+
+        <div class="company-wrapper">
+          <dl class="company-table">
+            <div>
+              <dt>会社名</dt>
+              <dd>FUUFU CREATIVE Inc.</dd>
+            </div>
+            <div>
+              <dt>所在地</dt>
+              <dd>東京都〇〇区〇〇 1-2-3</dd>
+            </div>
+            <div>
+              <dt>事業内容</dt>
+              <dd>Webサイト制作 / ECサイト運用サポート</dd>
+            </div>
+            <div>
+              <dt>代表</dt>
+              <dd>平塚 雄大（架空）</dd>
+            </div>
+            <div>
+              <dt>設立</dt>
+              <dd>2025年4月</dd>
+            </div>
+          </dl>
+
+          <div class="company-text">
+            <p>古着EC運営で培った知見をベースに、スモールビジネスに寄り添った Webサイト制作を行っています。デザインよりも「伝わる構成」や 「運用しやすさ」を重視しています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-gray">
+      <div class="container">
+        <h2 class="section-title">CONTACT</h2>
+        <p class="section-lead">制作のご相談や学習用の質問など、お気軽にご連絡ください。</p>
+
+        <form class="contact-form">
+          <div class="form-row">
+            <label for="name">お名前</label>
+            <input id="name" type="text" placeholder="例）山田 太郎">
+          </div>
+
+          <div class="form-row">
+            <label for="email">メールアドレス</label>
+            <input id="email" type="text" placeholder="例）example@example.com">
+          </div>
+
+            <div class="form-row">
+            <label for="message">お問い合わせはこちら</label>
+            <textarea id="message" rows="5" placeholder="ご希望のサイトやご相談内容をご記入ください。"></textarea>
+          </div>
+
+          <div class="form-row form-row-center">
+            <button type="submit" class="btn primary">送信する</button>
+          </div>
+
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+<p class="footer-logo">FUUFU<span>CREATIVE</span></p>
+ <p class="footer-copy">&copy; 2025 FUUFU CREATIVE Inc.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
