@@ -188,18 +188,12 @@
     <div class="container">
       <h2 class="section-title">CONTACT</h2>
 
-    <form 
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  class="contact-form"
->
-      <input type="hidden" name="form-name" value="contact">
-<p hidden>
-  <label>Don't fill this out: <input name="bot-field"></label>
-</p>
-
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden>
+          <label>Don't fill this out: <input name="bot-field"></label>
+        </p>
+        
         <div class="form-row">
           <label for="name">お名前</label>
           <input id="name" type="text" name="name" required>
