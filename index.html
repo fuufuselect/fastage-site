@@ -188,18 +188,15 @@
     <div class="container">
       <h2 class="section-title">CONTACT</h2>
 
-     <form 
+  <form
   name="contact"
   method="POST"
   data-netlify="true"
   netlify
-  action="/thanks.html"
   class="contact-form"
 >
-        <input type="hidden" name="form-name" value="contact">
-        <p hidden>
-          <label>Don't fill this out: <input name="bot-field"></label>
-        </p>
+  <input type="hidden" name="form-name" value="contact">
+  <input type="hidden" name="redirect" value="/thanks.html">
         
         <div class="form-row">
           <label for="name">お名前</label>
